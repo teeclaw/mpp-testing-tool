@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MPP Testing Tool - Frontend
+
+A modern, production-ready dashboard for the MPP Testing Tool built with Next.js, TypeScript, Tailwind CSS, and Shadcn UI.
+
+## Features
+
+- **Real-time Dashboard**: Live statistics including total tests, success rate, and average processing time
+- **Auto-refresh**: Dashboard automatically updates every 2 seconds
+- **Test Management**: Run new tests directly from the dashboard
+- **Test Results**: View recent test results with status indicators
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Modern UI**: Built with Shadcn UI components for a polished look
+
+## Tech Stack
+
+- **Next.js 15+** - React framework with hybrid static/server rendering
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Shadcn UI** - High-quality React components
+- **Axios** - HTTP client for API calls
+- **Lucide React** - Beautiful SVG icons
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/mpp-testing-tool.git
+cd mpp-testing-tool/frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Configure environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `.env.local` to set your backend API URL (default is already set to Railway production).
 
-## Learn More
+4. Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Build
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm start
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+## Deployment
+
+### Deploy to Vercel
+
+1. Install Vercel CLI:
+```bash
+npm install -g vercel
+```
+
+2. Deploy:
+```bash
+vercel
+```
+
+3. Set environment variables in Vercel dashboard if needed.
+
+### Deploy to Other Platforms
+
+This is a standard Next.js application and can be deployed to any Node.js hosting platform.
+
+## Environment Variables
+
+- `NEXT_PUBLIC_API_URL`: Backend API base URL (default: `https://mpp-testing-tool-production.up.railway.app/api`)
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Home page
+│   └── globals.css     # Global styles
+├── components/
+│   ├── Dashboard.tsx   # Main dashboard component
+│   └── ui/             # Shadcn UI components
+├── lib/
+│   ├── api.ts          # API client and types
+│   └── utils.ts        # Utility functions
+```
+
+## API Integration
+
+The dashboard connects to the MPP Testing Tool backend API with the following endpoints:
+
+- `GET /api/stats` - Get dashboard statistics
+- `GET /api/test-results` - Get recent test results
+- `POST /api/run-test` - Run a new test
+- `GET /api/test-results/:id` - Get specific test result
+
+## Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+
+## License
+
+MIT
+
+## Contact
+
+For questions or support, please contact Harry or the development team.

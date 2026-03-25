@@ -1,0 +1,11 @@
+
+> mpp-testing-frontend@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by process 2974626, using available port 3002 instead.
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://10.128.0.5:3002
+- Environments: .env.local
+✓ Ready in 1086ms
+
