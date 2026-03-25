@@ -1,0 +1,15 @@
+node_modules/
+*.db
+*.log
+.env
+.env.local
+.DS_Store
+dist/
+build/
+*.sqlite
+.next/
+out/
+.vercel
+*.swp
+*.swo
+*~
